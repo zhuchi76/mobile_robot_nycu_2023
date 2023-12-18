@@ -1,0 +1,10 @@
+<launch>
+    <!-- Start the rosserial_python node to establish a connection with Arduino -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen" args="/dev/ttyACM0" />
+ 
+    <!-- Start the Raspberry Pi node -->
+    <node name="pi_node" pkg="checkpoint4" type="pi_node_cp4.py" output="screen" />
+
+    <node name="ir_sensor_reader" pkg="checkpoint4" type="ir_node.py" output="screen" />
+
+</launch>
